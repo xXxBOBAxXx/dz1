@@ -1,11 +1,11 @@
 # 1. Напишите программу, удаляющую из текста все слова содержащие "абв", которое регистронезависимо. 
 # Используйте знания с последней лекции. Выполните ее в виде функции. 
 # Пример: «абвгдеж рабав копыто фабв Абкн абрыволк аБволк»
-def abv(str, fragment):
+def abv(str, trash):
     words = str.split(' ')
     rslt = []
     for word in words:
-        if fragment not in word.casefold():
+        if trash not in word.casefold():
             rslt.append(word)
     rslt = ' '.join(rslt)        
     return rslt
