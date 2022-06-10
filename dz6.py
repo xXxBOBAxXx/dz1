@@ -65,12 +65,12 @@ print(string)
 # Если в строку включены числа или специальные символы, они должны быть возвращены как есть. 
 # Также создайте функцию, которая расшифровывает эту строку обратно (некий начальный аналог шифрования сообщений). 
 # Не использовать функцию encode.
-def rot13(string, x):
+def rot13(string, regime):
     decode = 'аАбБвВгГдДеЕёЁжЖзЗиИйЙкКлЛмМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪыЫьЬэЭюЮяЯ'
     encode = 'мМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪыЫьЬэЭюЮяЯаАбБвВгГдДеЕёЁжЖзЗиИйЙкКлЛ'
 
-    if x == 'encode': coding = dict(zip(decode, encode))
-    if x == 'decode': coding = dict(zip(encode, decode))
+    if regime == 'encode': coding = dict(zip(decode, encode))
+    if regime == 'decode': coding = dict(zip(encode, decode))
     return ''.join(coding.get(i, i) for i in string)
 
 string = rot13(input('Введите строку: '), 'encode')
